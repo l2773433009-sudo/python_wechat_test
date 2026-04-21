@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wcflink"
+version = "0.2.0"
+description = "Python implementation of the wcfLink local runtime, HTTP API, SDK, and CLI"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+  { name = "lich0821" }
+]
+keywords = ["wechat", "ilink", "wcflink", "sdk", "python"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "License :: OSI Approved :: MIT License",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Libraries",
+]
+dependencies = [
+  "pycryptodome>=3.20.0",
+  "qrcode[pil]>=7.4.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/lich0821/wcfLink"
+Repository = "https://github.com/lich0821/wcfLink"
+Issues = "https://github.com/lich0821/wcfLink/issues"
+
+[project.scripts]
+wcflink = "wcflink.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/wcflink"]
